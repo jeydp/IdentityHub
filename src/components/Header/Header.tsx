@@ -3,12 +3,13 @@ import Link from "next/link";
 import React from "react";
 import Button from "../Button/Button";
 import { HeaderNavigation } from "./utils/navigation";
+import styles from "./Header.module.scss";
 
 const Header = () => {
   return (
-    <header className="block p-5">
-      <div className="max-w-[1203px] p-3 flex items-center justify-between mx-auto rounded-xl shadow-border shadow-white/10 bg-HeaderDark">
-        <Link href={"./"} className="inline-flex items-center gap-2">
+    <header className={styles.siteHeader}>
+      <div className={styles.container}>
+        <Link href={"./"} className={styles.headerLogo}>
           <svg
             width="33"
             height="32"
@@ -37,23 +38,15 @@ const Header = () => {
               </linearGradient>
             </defs>
           </svg>
-          <span className="text-xl font-bold font-sora">IdentityHub</span>
-          {/* <Image
-            alt="sitelogo"
-            width={32}
-            height={32}
-            src={"./images/site-logo.svg"}
-          /> */}
+          <span>IdentityHub</span>
         </Link>
 
-        <nav className="h-fit">
-          <ul className="inline-flex items-center gap-6">
+        <nav className={styles.siteNavigation}>
+          <ul>
             {HeaderNavigation.map((e, i) => {
               return (
                 <li key={i + 1}>
-                  <Link href="#!" className="block hover:text-GradientBlue">
-                    {e.name}
-                  </Link>
+                  <Link href="#!">{e.name}</Link>
                 </li>
               );
             })}

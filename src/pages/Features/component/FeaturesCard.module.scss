@@ -1,0 +1,77 @@
+.FeaturesCard {
+  @apply p-10 border border-solid border-BodyText/10 relative rounded-[20px] bg-gradient-to-r from-black to-[#53546C]/50 backdrop-blur-lg bg-[length:200%];
+
+  &:nth-child(2) {
+    .FeaturesCardIcon {
+      @apply bg-[#7950FF];
+    }
+    .FeaturesCardInner {
+      &::before {
+        @apply from-[#7950FF];
+      }
+      &::after {
+        @apply bg-[#7950FF];
+      }
+    }
+    ul {
+      li {
+        &::before {
+          @apply bg-checkMarkPurple;
+        }
+      }
+    }
+  }
+  &:nth-child(3) {
+    .FeaturesCardIcon {
+      @apply bg-[#098709];
+    }
+    .FeaturesCardInner {
+      &::before {
+        @apply from-[#098709];
+      }
+      &::after {
+        @apply bg-[#098709];
+      }
+    }
+    ul {
+      li {
+        &::before {
+          @apply bg-checkMarkGreen;
+        }
+      }
+    }
+  }
+
+  .FeaturesCardInner {
+    @apply relative grid grid-cols-[617px_1fr] gap-[140px];
+
+    &::before,
+    &::after {
+      @apply absolute w-1 h-full left-[17px] rounded-xl content-[''] bg-gradient-to-b from-GradientBlue;
+    }
+    &::after {
+      @apply blur-md bg-GradientBlue;
+    }
+  }
+
+  .FeaturesCardContent {
+    @apply relative pl-[60px];
+  }
+  .FeaturesCardIcon {
+    @apply absolute flex items-center justify-center rounded-full bg-GradientBlue top-0 left-0 w-10 h-10;
+  }
+  h3 {
+    @apply mb-[42px] text-[32px] leading-tight font-sora font-medium;
+  }
+
+  ul {
+    @apply flex flex-col gap-6;
+    li {
+      @apply text-xl pl-10 leading-normal relative;
+
+      &::before {
+        @apply absolute left-0 top-0.5 content-[''] w-[25px] h-[25px] rounded-full bg-checkMarkBlue bg-[length:25px];
+      }
+    }
+  }
+}

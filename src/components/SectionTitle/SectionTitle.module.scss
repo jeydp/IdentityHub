@@ -1,0 +1,25 @@
+.sectionTitle {
+  @apply mb-10 flex flex-col text-center justify-center;
+
+  .Heading {
+    @apply mb-6 text-[60px] font-bold font-sora bg-clip-text inline-block text-transparent bg-gradient-to-b from-GradientMagenta to-GradientBlue;
+  }
+
+  .Heading2 {
+    @apply max-w-[430px] mx-auto font-bold font-sora mb-4 block text-[40px] leading-tight;
+    span {
+      @apply bg-clip-text inline-block text-transparent bg-gradient-to-l from-GradientMagenta to-GradientBlue;
+    }
+  }
+
+  .smallTitle {
+    @apply shadow-titleBadge shadow-[#9F64EF]/40 mb-2 inline-flex w-fit mx-auto p-px bg-gradient-to-r from-GradientBlue to-GradientMagenta rounded-full;
+
+    span {
+      @apply inline-flex px-4 py-1.5 leading-none rounded-full text-sm bg-HeaderDark shadow-inner shadow-white/20;
+    }
+  }
+  .Desc {
+    @apply max-w-[674px] mx-auto text-2xl leading-snug text-BodyText;
+  }
+}

@@ -1,26 +1,32 @@
 import React from "react";
+import styles from "./SectionTitle.module.scss";
 
 interface SectionTitleProps {
   isH1?: boolean;
+  smallTitle?: string;
+  title?: string | React.ReactElement;
+  description?: string;
 }
 
-const SectionTitle = ({ isH1 }: SectionTitleProps) => {
+const SectionTitle = ({
+  isH1,
+  smallTitle,
+  title,
+  description,
+}: SectionTitleProps) => {
   return (
-    <div className="flex flex-col text-center justify-center">
-      <span className="mb-2 inline-flex w-fit mx-auto group p-px bg-gradient-to-r from-GradientBlue to-GradientMagenta rounded-full">
-        <span className="inline-flex px-4 py-1.5 leading-none rounded-full text-sm bg-HeaderDark shadow-inner shadow-white/20">
-          Secure your data
+    <div className={styles.sectionTitle}>
+      {smallTitle && (
+        <span className={styles.smallTitle}>
+          <span>{smallTitle}</span>
         </span>
-      </span>
-      {isH1 ? (
-        <h1>Identity-hub is a better way to achieve privacy</h1>
-      ) : (
-        <h2>Identity-hub is a better way to achieve privacy</h2>
       )}
-      <p>
-        Make your data invisible by generating unlimited identities. The
-        next-level in privacy protection for online and travel.
-      </p>
+      {isH1 ? (
+        <h1 className={styles.Heading}>{title}</h1>
+      ) : (
+        <h2 className={styles.Heading2}>{title}</h2>
+      )}
+      {description && <p className={styles.Desc}>{description}</p>}
     </div>
   );
 };

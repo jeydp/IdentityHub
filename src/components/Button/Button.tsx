@@ -25,7 +25,7 @@ const Button = ({ href, text, variant, arrow }: ButtonProps) => {
         className={` ${
           variant === "bordered"
             ? "group-hover:shadow-2xl group-hover:shadow-white/20"
-            : " group-hover:bg-transparent bg-HeaderDark shadow-inner shadow-white/20  "
+            : " group-hover:bg-transparent bg-HeaderDark/80 backdrop-blur-sm shadow-inner shadow-white/20  "
         } transition-all duration-300 rounded-xl inline-flex items-center gap-1 py-[11px] px-5 leading-none`}
       >
         {text}

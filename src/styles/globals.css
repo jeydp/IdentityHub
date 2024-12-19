@@ -4,7 +4,7 @@
 
 @layer {
   body {
-    @apply bg-site font-athiti text-base leading-normal text-BodyText bg-PrimaryDark;
+    @apply bg-site bg-PrimaryDark bg-blend-normal font-athiti text-base leading-normal text-BodyText;
   }
   a {
     @apply transition-all duration-300;

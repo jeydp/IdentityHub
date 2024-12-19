@@ -1,0 +1,35 @@
+.serviceCard {
+  filter: url(#flt_tag);
+  @apply relative p-8 flex flex-col z-10;
+
+  &::before,
+  &::after {
+    clip-path: polygon(0% 0%, 86% 0%, 100% 17%, 100% 100%, 75% 100%, 26% 100%, 0% 100%);
+    @apply -z-10 bg-gradient-to-l from-GradientMagenta to-GradientBlue bg-no-repeat pointer-events-none w-full h-full top-0 left-0 absolute content-[""];
+  }
+  &::after {
+    @apply rounded-2xl bg-site z-0 w-[calc(100%_-_5px)] h-[calc(100%_-_5px)] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+  .flt_svg {
+    @apply invisible absolute w-0 h-0;
+  }
+  & > * {
+    @apply relative z-10;
+  }
+  .icon {
+    @apply static mb-7 flex items-center justify-center w-13 h-13 bg-[length:550%] rounded-xl bg-gradient-to-br from-GradientBlue to-GradientMagenta;
+
+    &::before {
+      @apply w-[220px] blur-[50px] opacity-20 right-24 top-14 bg-GradientBlue rounded-l-full aspect-square absolute content-[''];
+    }
+  }
+  h3 {
+    @apply text-[28px] leading-tight mb-2.5 md:max-w-[calc(100%_-_60px)];
+  }
+  p {
+    @apply text-xl leading-normal mb-6;
+  }
+  a {
+    @apply w-fit hover:text-GradientBlue hover:underline underline-offset-8 mt-auto font-sora inline-flex items-center gap-1.5;
+  }
+}

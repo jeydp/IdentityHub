@@ -1,0 +1,10 @@
+.features {
+  @apply relative pb-6 md:pb-8 2xl:pb-12 pt-8 md:pt-12 lg:pt-16 xl:pt-20 2xl:pt-24;
+  .gradientBlur {
+    @apply pointer-events-none absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 opacity-80 mix-blend-color-dodge;
+  }
+
+  .FeaturesCardWrap {
+    @apply flex flex-col gap-10;
+  }
+}

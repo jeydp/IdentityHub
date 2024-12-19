@@ -1,0 +1,23 @@
+.siteHeader {
+  @apply block p-5;
+  .container {
+    @apply max-w-[1203px] p-3 flex items-center justify-between mx-auto rounded-xl shadow-border shadow-white/10;
+  }
+  .headerLogo {
+    @apply inline-flex items-center gap-2;
+
+    span {
+      @apply text-xl font-bold font-sora;
+    }
+  }
+}
+.siteNavigation {
+  @apply h-fit;
+  ul {
+    @apply inline-flex items-center gap-6;
+
+    a {
+      @apply bg-transparent block hover:text-GradientBlue hover:underline underline-offset-8;
+    }
+  }
+}

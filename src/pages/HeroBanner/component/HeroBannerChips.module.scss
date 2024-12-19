@@ -1,0 +1,13 @@
+.HeroBannerChips {
+  @apply w-fit h-fit flex gap-4 items-center p-2.5 rounded-2xl border border-solid border-BodyText/30 backdrop-blur-md bg-gradient-to-br from-[#1B1C36]/50 to-[#70717A]/50;
+
+  .icon {
+    @apply w-11 h-11 bg-white/5 rounded-xl flex items-center justify-center;
+  }
+  p {
+    @apply text-sm mb-1 leading-none;
+  }
+  span {
+    @apply block text-base leading-none;
+  }
+}
