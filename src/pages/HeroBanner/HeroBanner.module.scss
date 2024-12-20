@@ -1,8 +1,5 @@
 .HeroBanner {
-  @apply relative pt-6 md:pt-10 xl:pt-14 2xl:pt-16 pb-10 md:pb-16 xl:pb-20 2xl:pb-[100px];
-  &::before {
-    // @apply absolute content-[''] bg-blend-overlay bg-PrimaryDark/50 -z-10 bg-heroBanner bg-no-repeat bg-center bg-contain -top-40 left-0 w-full h-[1500px];
-  }
+  @apply overflow-hidden MD:overflow-visible relative pt-6 MD:pt-10 LG:pt-14 XL:pt-16 pb-10 MD:pb-16 LG:pb-20 XL:pb-[100px];
 
   .buttonGroup {
     @apply -mt-2 flex items-center gap-4 justify-center;
@@ -11,20 +8,19 @@
     @apply pointer-events-none absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 opacity-80 mix-blend-color-dodge;
   }
   .galaxyImg {
-    @apply pointer-events-none max-h-[1200px] aspect-square w-auto animate-spin-slow absolute top-0 left-0 right-0 mx-auto;
-  }
-  .galaxyImg {
-    @apply z-0;
+    @apply z-0 pointer-events-none max-h-[400px] MD:max-h-[600px] LG:max-h-[900px] XL:max-h-[1200px] aspect-square w-auto animate-spin-slow absolute top-1/3 MD:top-0 left-0 right-0 mx-auto;
   }
 }
+
 .HeroBannerContainer {
-  @apply max-w-[992px] mx-auto relative z-10;
+  @apply animate-opacityAnimate opacity-0 max-w-[605px] LG:max-w-[992px] mx-auto relative z-10 px-4 MD:px-0;
 }
+
 .HeroBannerImage {
   @apply mt-[50px] max-w-[885px] mx-auto relative flex items-center justify-center;
 
   ul {
-    @apply flex flex-wrap w-full top-0 bottom-0 my-auto h-[calc(100%_-_34px)] absolute text-left;
+    @apply hidden SM:flex flex-wrap w-full top-0 bottom-0 my-auto h-[calc(100%_-_34px)] absolute text-left;
     li {
       @apply flex w-1/2;
       &:nth-child(2) {

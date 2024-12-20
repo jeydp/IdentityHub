@@ -6,11 +6,16 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      XS: "640px",
+      SM: "767px",
+      MD: "1023px",
+      LG: "1279px",
+      XL: "1535px",
+    },
     container: {
-      // you can configure the container to be centered
       center: true,
-
-      // default breakpoints but with 40px removed
+      padding: "1rem",
       screens: {
         sm: "600px",
         md: "728px",
@@ -31,6 +36,7 @@ export default {
         checkMarkGreen: "url('/images/checkmark-circle-green.svg')",
         checkMarkBlue: "url('/images/checkmark-circle-blue.svg')",
         checkMarkPurple: "url('/images/checkmark-circle-purple.svg')",
+        arcLine: "url('/images/vector-arc.svg')",
       },
       boxShadow: {
         border: "inset 0 0 0 1px",
@@ -45,7 +51,13 @@ export default {
         BodyText: "#CAD1E9",
       },
       animation: {
+        opacityAnimate: "opacityAnimate 1s linear 0.5s forwards",
         "spin-slow": "spin 250s linear infinite",
+      },
+      keyframes: {
+        opacityAnimate: {
+          "100%": { opacity: "1" },
+        },
       },
       spacing: {
         13: "52px",

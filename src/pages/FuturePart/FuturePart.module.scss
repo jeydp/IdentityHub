@@ -1,0 +1,7 @@
+.futurePart {
+  @apply relative py-16 SM:py-20 MD:py-24 LG:py-[130px] XL:py-[160px];
+
+  .buttonWrap {
+    @apply flex items-center justify-center mt-5 LG:mt-8;
+  }
+}

@@ -1,5 +1,5 @@
 .FeaturesCard {
-  @apply p-10 border border-solid border-BodyText/10 relative rounded-[20px] bg-gradient-to-r from-black to-[#53546C]/50 backdrop-blur-lg bg-[length:200%];
+  @apply px-4 py-8 MD:p-8 XL:p-10 border border-solid border-BodyText/10 relative rounded-[20px] bg-gradient-to-r from-black to-[#53546C]/50 backdrop-blur-lg bg-[length:200%];
 
   &:nth-child(2) {
     .FeaturesCardIcon {
@@ -21,6 +21,7 @@
       }
     }
   }
+
   &:nth-child(3) {
     .FeaturesCardIcon {
       @apply bg-[#098709];
@@ -43,11 +44,11 @@
   }
 
   .FeaturesCardInner {
-    @apply relative grid grid-cols-[617px_1fr] gap-[140px];
+    @apply relative grid LG:grid-cols-[530px_1fr] XL:grid-cols-[617px_1fr] gap-24 XL:gap-[140px];
 
     &::before,
     &::after {
-      @apply absolute w-1 h-full left-[17px] rounded-xl content-[''] bg-gradient-to-b from-GradientBlue;
+      @apply hidden SM:block absolute w-1 h-full left-[17px] rounded-xl content-[''] bg-gradient-to-b from-GradientBlue;
     }
     &::after {
       @apply blur-md bg-GradientBlue;
@@ -55,19 +56,22 @@
   }
 
   .FeaturesCardContent {
-    @apply relative pl-[60px];
+    @apply relative SM:pl-[60px];
+  }
+  .FeaturesCardImage {
+    @apply hidden LG:block;
   }
   .FeaturesCardIcon {
-    @apply absolute flex items-center justify-center rounded-full bg-GradientBlue top-0 left-0 w-10 h-10;
+    @apply absolute hidden SM:flex items-center justify-center rounded-full bg-GradientBlue top-0 left-0 w-10 h-10;
   }
   h3 {
-    @apply mb-[42px] text-[32px] leading-tight font-sora font-medium;
+    @apply mb-5 MD:mb-7 LG:mb-9 XL:mb-[42px] text-2xl LG:text-[28px] XL:text-[32px] leading-tight font-sora font-medium;
   }
 
   ul {
     @apply flex flex-col gap-6;
     li {
-      @apply text-xl pl-10 leading-normal relative;
+      @apply text-lg MD:text-xl pl-10 leading-normal relative;
 
       &::before {
         @apply absolute left-0 top-0.5 content-[''] w-[25px] h-[25px] rounded-full bg-checkMarkBlue bg-[length:25px];

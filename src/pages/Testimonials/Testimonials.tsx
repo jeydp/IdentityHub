@@ -3,6 +3,10 @@ import Slider from "react-slick";
 import styles from "./Testimonials.module.scss";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
 import TestimonialsCard from "./component/TestimonialsCard";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Image from "next/image";
+import { TestimonialsData } from "./utils/Testimonials";
 
 const Testimonials = () => {
   var settings = {
@@ -23,29 +27,28 @@ const Testimonials = () => {
             </>
           }
         />
-        <TestimonialsCard />
-        <Slider className="max-w-full" {...settings}>
-          <div>
-            <TestimonialsCard />
-            <h3>1</h3>
-          </div>
-          <div>
-            <h3>2</h3>
-          </div>
-          <div>
-            <h3>3</h3>
-          </div>
-          <div>
-            <h3>4</h3>
-          </div>
-          <div>
-            <h3>5</h3>
-          </div>
-          <div>
-            <h3>6</h3>
-          </div>
+        <Slider className={styles.testimonialSlider} {...settings}>
+          {TestimonialsData.map((e, i) => {
+            return (
+              <TestimonialsCard
+                key={i + 1}
+                date={e.date}
+                testimonialsText={e.testimonialsText}
+                userImage={e.userImage}
+                userName={e.userName}
+                userRole={e.userRole}
+              />
+            );
+          })}
         </Slider>
       </div>
+      <Image
+        className={styles.gradientBlur}
+        alt="sitelogo"
+        width={1417}
+        height={1383}
+        src={"/images/banner-gradient-blur.png"}
+      />
     </section>
   );
 };

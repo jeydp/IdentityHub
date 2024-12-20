@@ -2,11 +2,18 @@
   @apply mb-10 flex flex-col text-center justify-center;
 
   .Heading {
-    @apply mb-6 text-[60px] font-bold font-sora bg-clip-text inline-block text-transparent bg-gradient-to-b from-GradientMagenta to-GradientBlue;
+    @apply mb-6 text-4xl LG:text-5xl XL:text-[60px] font-semibold font-sora bg-clip-text inline-block text-transparent bg-gradient-to-b from-GradientMagenta to-GradientBlue;
+
+    span {
+      @apply bg-arcLine bg-no-repeat bg-[length:100%] bg-[0_100%];
+    }
+    &.bigStyle {
+      @apply block bg-clip-content text-white bg-none font-semibold max-w-[700px] mx-auto;
+    }
   }
 
   .Heading2 {
-    @apply max-w-[430px] mx-auto font-bold font-sora mb-4 block text-[40px] leading-tight;
+    @apply max-w-[430px] mx-auto font-bold font-sora mb-4 block text-3xl LG:text-4xl XL:text-[40px] leading-tight;
     span {
       @apply bg-clip-text inline-block text-transparent bg-gradient-to-l from-GradientMagenta to-GradientBlue;
     }
@@ -20,6 +27,6 @@
     }
   }
   .Desc {
-    @apply max-w-[674px] mx-auto text-2xl leading-snug text-BodyText;
+    @apply max-w-[674px] mx-auto text-xl LG:text-2xl leading-snug text-BodyText;
   }
 }

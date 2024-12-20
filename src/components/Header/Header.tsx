@@ -1,11 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import Button from "../Button/Button";
 import { HeaderNavigation } from "./utils/navigation";
 import styles from "./Header.module.scss";
+import MenuIcon from "../Icons/MenuIcon";
+import Cross from "../Icons/Cross";
 
 const Header = () => {
+  const [mobileMenu, setMobileMenu] = useState(false);
+
   return (
     <header className={styles.siteHeader}>
       <div className={styles.container}>
@@ -41,20 +45,39 @@ const Header = () => {
           <span>IdentityHub</span>
         </Link>
 
-        <nav className={styles.siteNavigation}>
+        <span
+          onClick={() => setMobileMenu(!mobileMenu)}
+          role="button"
+          className={`${styles.MobileMenuTrigger} ${
+            mobileMenu && styles.active
+          }`}
+        >
+          {mobileMenu ? <Cross /> : <MenuIcon />}
+        </span>
+
+        <nav
+          className={`${styles.siteNavigation} ${
+            mobileMenu ? styles.expand : ""
+          }`}
+        >
           <ul>
             {HeaderNavigation.map((e, i) => {
               return (
                 <li key={i + 1}>
-                  <Link href="#!">{e.name}</Link>
+                  <Link href={e.link}>{e.name}</Link>
                 </li>
               );
             })}
           </ul>
         </nav>
 
-        {/* <Button arrow href="./" text="Start free trial" variant="bordered" /> */}
-        <Button arrow href="./" text="Start free trial" variant="filled" />
+        <Button
+          className="hidden SM:inline-flex"
+          arrow
+          href="./"
+          text="Start free trial"
+          variant="filled"
+        />
       </div>
     </header>
   );

@@ -6,6 +6,8 @@ interface SectionTitleProps {
   smallTitle?: string;
   title?: string | React.ReactElement;
   description?: string;
+  highLightUnderLine?: boolean;
+  bigStyle?: boolean;
 }
 
 const SectionTitle = ({
@@ -13,9 +15,15 @@ const SectionTitle = ({
   smallTitle,
   title,
   description,
+  highLightUnderLine,
+  bigStyle,
 }: SectionTitleProps) => {
   return (
-    <div className={styles.sectionTitle}>
+    <div
+      className={`${styles.sectionTitle} ${
+        highLightUnderLine ? "highlight_Undeline" : ""
+      }`}
+    >
       {smallTitle && (
         <span className={styles.smallTitle}>
           <span>{smallTitle}</span>
@@ -24,7 +32,13 @@ const SectionTitle = ({
       {isH1 ? (
         <h1 className={styles.Heading}>{title}</h1>
       ) : (
-        <h2 className={styles.Heading2}>{title}</h2>
+        <h2
+          className={`${bigStyle ? styles.bigStyle : ""} ${
+            bigStyle ? styles.Heading : styles.Heading2
+          }`}
+        >
+          {title}
+        </h2>
       )}
       {description && <p className={styles.Desc}>{description}</p>}
     </div>

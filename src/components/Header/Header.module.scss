@@ -1,5 +1,6 @@
+@import "../../styles/mixin.scss";
 .siteHeader {
-  @apply block p-5;
+  @apply relative block p-3 XL:p-5;
   .container {
     @apply max-w-[1203px] p-3 flex items-center justify-between mx-auto rounded-xl shadow-border shadow-white/10;
   }
@@ -11,10 +12,29 @@
     }
   }
 }
+.MobileMenuTrigger {
+  @apply select-none SM:hidden bg-gradient-to-tr from-GradientMagenta/50 to-GradientBlue/50 text-white items-center justify-center w-12 h-12 rounded-xl border border-solid border-white/5;
+
+  &.active {
+    // @apply flex;
+  }
+  @media (max-width: $SM) {
+    @apply flex;
+  }
+}
 .siteNavigation {
-  @apply h-fit;
+  @apply XL:h-fit;
+
+  @media (max-width: $SM) {
+    @apply hidden absolute z-20 top-full border border-solid border-white/5 w-full left-0 right-0 rounded-xl p-4 bg-PrimaryDark max-w-[calc(100%_-_20px)] mx-auto;
+
+    &.expand {
+      @apply block;
+    }
+  }
+
   ul {
-    @apply inline-flex items-center gap-6;
+    @apply flex-col SM:flex-row inline-flex SM:items-center gap-4 LG:gap-6;
 
     a {
       @apply bg-transparent block hover:text-GradientBlue hover:underline underline-offset-8;

@@ -1,40 +1,10 @@
-import CheckShield from "@/components/Icons/CheckShield";
-import CreditCard from "@/components/Icons/CreditCard";
-import EmailOpen from "@/components/Icons/EmailOpen";
-import Phone from "@/components/Icons/Phone";
 import React from "react";
 import styles from "./HeroBanner.module.scss";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
 import Button from "@/components/Button/Button";
 import HeroBannerChips from "./component/HeroBannerChips";
 import Image from "next/image";
-
-const HeroBannerChipsData = [
-  {
-    id: 1,
-    icon: <CheckShield />,
-    title: "One-time passcode",
-    description: "Kas3345-r32",
-  },
-  {
-    id: 2,
-    icon: <Phone />,
-    title: "Phone numbers",
-    description: "+1 (456) 453-3456",
-  },
-  {
-    id: 1,
-    icon: <CreditCard />,
-    title: "Credit card",
-    description: "123 456 789 1243",
-  },
-  {
-    id: 1,
-    icon: <EmailOpen />,
-    title: "Email address",
-    description: "davidjx@gmail.com",
-  },
-];
+import { HeroBannerChipsData } from "./utils/HeroBanner";
 
 const HeroBanner = () => {
   return (
@@ -60,7 +30,7 @@ const HeroBanner = () => {
               return (
                 <li key={i + 1}>
                   <HeroBannerChips
-                    icon={e.icon}
+                    icon={<e.icon />}
                     title={e.title}
                     description={e.description}
                   />
@@ -69,7 +39,7 @@ const HeroBanner = () => {
             })}
           </ul>
           <Image
-            alt="sitelogo"
+            alt="centerimg"
             width={390.65}
             height={411.77}
             src={"/images/hero-center-img.png"}

@@ -1,0 +1,30 @@
+.footer {
+  @apply p-4 MD:p-7 XL:p-10 pb-6;
+
+  .footerContent {
+    @apply py-6 flex-col SM:flex-row flex justify-between gap-6 SM:gap-0;
+  }
+  .footerNavigate {
+    @apply flex-col SM:flex-row flex SM:ml-auto gap-4  SM:gap-12 XL:gap-24;
+    a {
+      @apply uppercase bg-transparent block hover:text-GradientBlue;
+    }
+  }
+}
+.footerLogo {
+  @apply inline-flex items-center gap-2;
+
+  span {
+    @apply text-xl font-bold font-sora;
+  }
+}
+.footerBottom {
+  @apply flex-col SM:flex-row flex items-center justify-between pt-6 border-t border-solid border-BodyText/10;
+  .footerSocial {
+    @apply flex SM:ml-auto gap-8 mt-4 SM:mt-0;
+
+    a {
+      @apply flex items-center justify-center hover:bg-GradientBlue w-10 h-10 rounded-full bg-[#1B1530];
+    }
+  }
+}

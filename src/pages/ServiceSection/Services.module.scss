@@ -1,6 +1,6 @@
 .serviceSection {
-  @apply py-8 md:py-12 lg:py-16 xl:py-20 2xl:py-24;
+  @apply py-8 SM:py-12 MD:py-16 LG:py-20 XL:py-24;
 }
 .serviceCardWrap {
-  @apply grid grid-cols-3 gap-6;
+  @apply grid SM:grid-cols-2 MD:grid-cols-3 gap-6;
 }

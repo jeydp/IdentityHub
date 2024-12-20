@@ -4,27 +4,28 @@ import React from "react";
 interface ButtonProps {
   text: string;
   href: string;
+  className?: string;
   variant?: "filled" | "bordered";
   arrow?: boolean;
 }
 
 const BorderedStyle =
-  "p-px bg-gradient-to-r from-GradientBlue/70 to-GradientMagenta/70 rounded-xl text-BodyText text-white";
+  "group p-px bg-gradient-to-r from-GradientBlue/70 to-GradientMagenta/70 rounded-xl text-BodyText text-white";
 const FilledStyle =
   "group p-px bg-gradient-to-r from-GradientBlue to-GradientMagenta rounded-xl";
 
-const Button = ({ href, text, variant, arrow }: ButtonProps) => {
+const Button = ({ href, text, variant, arrow, className }: ButtonProps) => {
   return (
     <Link
       href={href}
-      className={` ${variant === "bordered" ? BorderedStyle : ""} ${
+      className={`${className} ${variant === "bordered" ? BorderedStyle : ""} ${
         variant === "filled" ? FilledStyle : ""
       }`}
     >
       <span
         className={` ${
           variant === "bordered"
-            ? "group-hover:shadow-2xl group-hover:shadow-white/20"
+            ? "group-hover:shadow-xl group-hover:shadow-GradientBlue/20"
             : " group-hover:bg-transparent bg-HeaderDark/80 backdrop-blur-sm shadow-inner shadow-white/20  "
         } transition-all duration-300 rounded-xl inline-flex items-center gap-1 py-[11px] px-5 leading-none`}
       >

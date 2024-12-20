@@ -1,9 +1,7 @@
 import React from "react";
 import styles from "./ServiceCard.module.scss";
-import ServiceIcon1 from "@/components/Icons/ServiceIcon1";
 import Link from "next/link";
 import LinkTriangle from "@/components/Icons/LinkTriangle";
-import Image from "next/image";
 
 interface ServiceCardProps {
   title?: string;

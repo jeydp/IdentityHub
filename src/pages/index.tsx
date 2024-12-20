@@ -4,6 +4,8 @@ import ServiceSection from "@/pages/ServiceSection/Services";
 import HeroBanner from "./HeroBanner/HeroBanner";
 import Features from "./Features/Features";
 import Testimonials from "./Testimonials/Testimonials";
+import FuturePart from "./FuturePart/FuturePart";
+import Footer from "@/components/Footer/Footer";
 
 const soro = Sora({
   variable: "--font-soro",
@@ -24,6 +26,8 @@ export default function Home() {
       <ServiceSection />
       <Features />
       <Testimonials />
+      <FuturePart />
+      <Footer />
     </div>
   );
 }
